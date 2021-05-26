@@ -1,6 +1,5 @@
 class Doctor
-  attr_reader :doctor,
-              :name,
+  attr_reader :name,
               :specialty,
               :education,
               :salary
