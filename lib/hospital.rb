@@ -1,7 +1,7 @@
 class Hospital
   attr_reader :name,
-              :chief_of_surgery,
-              :doctors
+  :chief_of_surgery,
+  :doctors
 
   def initialize(name, chief_of_surgery, doctors)
     @name = name
@@ -32,4 +32,10 @@ class Hospital
     specialties_array
   end
 
+  def highest_paid
+    doctor_array_by_salary = @doctors.sort_by do |doctor|
+      doctor.salary
+    end
+    doctor_array_by_salary.last
+  end
 end

@@ -45,4 +45,11 @@ RSpec.describe Hospital do
     expect(seattle_grace.specialties).to eq(["General Surgery", "Pediatric Surgery"])
   end
 
+  it 'can return the highest paid doctor at a hospital' do
+    meredith = Doctor.new({name: "Meredith Grey", specialty: "General Surgery", education: "Harvard University", salary: 100_000})
+    alex = Doctor.new({name: "Alex Karev", specialty: "Pediatric Surgery", education: "Johns Hopkins University", salary: 90_000})
+    seattle_grace = Hospital.new("Seattle Grace", "Richard Webber", [meredith, alex])
+
+    expect(seattle_grace.highest_paid).to eq(meredith)
+  end
 end
